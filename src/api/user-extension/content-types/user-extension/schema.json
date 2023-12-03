@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_extensions",
+  "info": {
+    "singularName": "user-extension",
+    "pluralName": "user-extensions",
+    "displayName": "user_extension",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "surname": {
+      "type": "string"
+    },
+    "edad": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "string"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_extension"
+    }
+  }
+}
