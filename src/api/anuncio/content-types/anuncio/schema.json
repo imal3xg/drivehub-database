@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anuncios",
+  "info": {
+    "singularName": "anuncio",
+    "pluralName": "anuncios",
+    "displayName": "anuncio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "marca": {
+      "type": "string"
+    },
+    "modelo": {
+      "type": "string"
+    },
+    "year": {
+      "type": "date"
+    },
+    "precio": {
+      "type": "biginteger"
+    },
+    "imgs": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "user_extension": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-extension.user-extension",
+      "inversedBy": "anuncios"
+    }
+  }
+}
