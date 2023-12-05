@@ -4,7 +4,8 @@
   "info": {
     "singularName": "anuncio",
     "pluralName": "anuncios",
-    "displayName": "anuncio"
+    "displayName": "anuncio",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,17 +19,19 @@
       "type": "string"
     },
     "year": {
-      "type": "date"
+      "type": "date",
+      "default": "2000-01-01"
     },
     "precio": {
       "type": "biginteger"
     },
     "imgs": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "user_extension": {
       "type": "relation",

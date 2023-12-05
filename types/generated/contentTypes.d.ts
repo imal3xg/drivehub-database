@@ -368,6 +368,7 @@ export interface ApiAnuncioAnuncio extends Schema.CollectionType {
     singularName: 'anuncio';
     pluralName: 'anuncios';
     displayName: 'anuncio';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -375,7 +376,7 @@ export interface ApiAnuncioAnuncio extends Schema.CollectionType {
   attributes: {
     marca: Attribute.String;
     modelo: Attribute.String;
-    year: Attribute.Date;
+    year: Attribute.Date & Attribute.DefaultTo<'2000-01-01'>;
     precio: Attribute.BigInteger;
     imgs: Attribute.Media;
     user_extension: Attribute.Relation<
