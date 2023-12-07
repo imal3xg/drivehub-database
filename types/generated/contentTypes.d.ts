@@ -407,7 +407,7 @@ export interface ApiUserExtensionUserExtension extends Schema.CollectionType {
   info: {
     singularName: 'user-extension';
     pluralName: 'user-extensions';
-    displayName: 'user_extension';
+    displayName: 'users-extensions';
     description: '';
   };
   options: {
