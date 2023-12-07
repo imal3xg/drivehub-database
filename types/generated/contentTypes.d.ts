@@ -419,15 +419,15 @@ export interface ApiUserExtensionUserExtension extends Schema.CollectionType {
     edad: Attribute.Integer;
     location: Attribute.String;
     img: Attribute.Media;
-    users_permissions_user: Attribute.Relation<
-      'api::user-extension.user-extension',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
     anuncios: Attribute.Relation<
       'api::user-extension.user-extension',
       'oneToMany',
       'api::anuncio.anuncio'
+    >;
+    users_permissions_user: Attribute.Relation<
+      'api::user-extension.user-extension',
+      'oneToOne',
+      'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -716,7 +716,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -745,7 +744,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
-    user_extension: Attribute.Relation<
+    users_extension: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToOne',
       'api::user-extension.user-extension'

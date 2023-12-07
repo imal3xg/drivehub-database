@@ -9,8 +9,7 @@
     "displayName": "User"
   },
   "options": {
-    "draftAndPublish": false,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -66,11 +65,10 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "user_extension": {
+    "users_extension": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::user-extension.user-extension",
-      "mappedBy": "users_permissions_user"
+      "target": "api::user-extension.user-extension"
     }
   }
 }

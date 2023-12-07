@@ -36,17 +36,16 @@
         "audios"
       ]
     },
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "user_extension"
-    },
     "anuncios": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::anuncio.anuncio",
       "mappedBy": "user_extension"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }
