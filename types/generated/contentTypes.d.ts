@@ -402,6 +402,45 @@ export interface ApiAnuncioAnuncio extends Schema.CollectionType {
   };
 }
 
+export interface ApiMisanuncioMisanuncio extends Schema.CollectionType {
+  collectionName: 'misanuncios';
+  info: {
+    singularName: 'misanuncio';
+    pluralName: 'misanuncios';
+    displayName: 'misanuncio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    marca: Attribute.String;
+    modelo: Attribute.String;
+    precio: Attribute.BigInteger;
+    year: Attribute.Date;
+    users_permissions_user: Attribute.Relation<
+      'api::misanuncio.misanuncio',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::misanuncio.misanuncio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::misanuncio.misanuncio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiUserExtensionUserExtension extends Schema.CollectionType {
   collectionName: 'user_extensions';
   info: {
@@ -749,6 +788,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToOne',
       'api::user-extension.user-extension'
     >;
+    misanuncios: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::misanuncio.misanuncio'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -777,6 +821,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::anuncio.anuncio': ApiAnuncioAnuncio;
+      'api::misanuncio.misanuncio': ApiMisanuncioMisanuncio;
       'api::user-extension.user-extension': ApiUserExtensionUserExtension;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

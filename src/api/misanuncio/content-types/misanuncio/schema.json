@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "misanuncios",
+  "info": {
+    "singularName": "misanuncio",
+    "pluralName": "misanuncios",
+    "displayName": "misanuncio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "marca": {
+      "type": "string"
+    },
+    "modelo": {
+      "type": "string"
+    },
+    "precio": {
+      "type": "biginteger"
+    },
+    "year": {
+      "type": "date"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "misanuncios"
+    },
+    "img": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
