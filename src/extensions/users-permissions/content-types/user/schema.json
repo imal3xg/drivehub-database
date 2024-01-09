@@ -75,6 +75,11 @@
       "relation": "oneToMany",
       "target": "api::misanuncio.misanuncio",
       "mappedBy": "users_permissions_user"
+    },
+    "anuncios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::anuncio.anuncio"
     }
   }
 }

@@ -793,6 +793,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::misanuncio.misanuncio'
     >;
+    anuncios: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::anuncio.anuncio'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
