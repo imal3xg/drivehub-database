@@ -36,12 +36,6 @@
         "audios"
       ]
     },
-    "anuncios": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::anuncio.anuncio",
-      "mappedBy": "user_extension"
-    },
     "users_permissions_user": {
       "type": "relation",
       "relation": "oneToOne",

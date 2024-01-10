@@ -379,10 +379,10 @@ export interface ApiAnuncioAnuncio extends Schema.CollectionType {
     year: Attribute.Date & Attribute.DefaultTo<'2000-01-01'>;
     precio: Attribute.BigInteger;
     imgs: Attribute.Media;
-    user_extension: Attribute.Relation<
+    users_permissions_user: Attribute.Relation<
       'api::anuncio.anuncio',
       'manyToOne',
-      'api::user-extension.user-extension'
+      'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -458,11 +458,6 @@ export interface ApiUserExtensionUserExtension extends Schema.CollectionType {
     edad: Attribute.Integer;
     location: Attribute.String;
     img: Attribute.Media;
-    anuncios: Attribute.Relation<
-      'api::user-extension.user-extension',
-      'oneToMany',
-      'api::anuncio.anuncio'
-    >;
     users_permissions_user: Attribute.Relation<
       'api::user-extension.user-extension',
       'oneToOne',

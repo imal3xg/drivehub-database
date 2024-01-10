@@ -79,7 +79,8 @@
     "anuncios": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::anuncio.anuncio"
+      "target": "api::anuncio.anuncio",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

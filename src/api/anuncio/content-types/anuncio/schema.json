@@ -33,10 +33,10 @@
         "images"
       ]
     },
-    "user_extension": {
+    "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::user-extension.user-extension",
+      "target": "plugin::users-permissions.user",
       "inversedBy": "anuncios"
     }
   }
