@@ -461,6 +461,7 @@ export interface ApiUserExtensionUserExtension extends Schema.CollectionType {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+    username: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
