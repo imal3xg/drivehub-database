@@ -19,12 +19,6 @@
     "surname": {
       "type": "string"
     },
-    "edad": {
-      "type": "integer"
-    },
-    "location": {
-      "type": "string"
-    },
     "img": {
       "type": "media",
       "multiple": false,

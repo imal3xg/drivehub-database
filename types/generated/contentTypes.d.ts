@@ -455,8 +455,6 @@ export interface ApiUserExtensionUserExtension extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     surname: Attribute.String;
-    edad: Attribute.Integer;
-    location: Attribute.String;
     img: Attribute.Media;
     users_permissions_user: Attribute.Relation<
       'api::user-extension.user-extension',
